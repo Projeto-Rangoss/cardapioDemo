@@ -1,0 +1,267 @@
+
+body{
+  background-color: #4d2905e7; /* cor de fundo caso a imagem não carregue */
+  /* background-image: url("/img/cidade-de-fantasia.jpg"); */
+  background-image: url(https://images.pexels.com/photos/6042358/pexels-photo-6042358.jpeg?auto=compress&cs=tinysrgb&w=1600);
+  background-repeat: no-repeat; /*NÃO REPETIR A IMAGEM*/
+  background-size: cover; 
+}
+
+.main{
+  display: grid;
+  background: #00000067;
+  z-index: 1;
+  object-fit: cover;
+}
+
+
+/*ESTILIZAÇÃO DO TOP RANGOSS*/
+.topRangoss{
+  display: grid;
+  place-items: center; /*CENTRALIZAR*/
+  color: #ffffff;
+  font-size: 50px;
+  margin: 50px;
+  text-transform: uppercase;
+}
+
+.pedidosPopulares{
+  display: flex;
+}
+
+.pedido {
+    margin: 30px;
+    position: relative;
+    width: 50%;
+  }
+  .meio{ /*imagem do meio*/
+  margin: 0px 0px 0px 20px;
+  }
+ 
+  .imagem {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+ 
+  .escondida { /*DIV ESCONDIDA QUE SOBE*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2px ;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #DCA731;
+  }
+ 
+  .pedido:hover .escondida {
+    opacity: 0.8;
+  }
+ 
+  .textoPedido {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+
+/*ESTILIZAÇÃO DO MENU*/
+.menuCompleto{
+  padding: 0px;
+  margin: 50px auto;
+  display: grid;
+  place-items: center;
+}
+
+.tituloMenu{
+  margin: 10px 30px;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: bolder;
+  color: white;
+}
+
+.botaoMenu{
+  background: transparent;
+  border: #FFD700 2px solid;
+  text-decoration: none;
+  font-weight: bolder;
+  color: #DCA731;
+  padding:50px;
+  border-radius: 20px;
+  margin: 20px;
+} 
+.botaoMenu:hover{
+  transform: scale(1.09);
+  filter:drop-shadow(0px 0px 10px #FFD700);
+}
+
+.avisos{
+  display: flex;
+  align-items: center;
+}
+
+.avisoPlaca{
+  align-items: center;
+  display: block;
+  animation: quicar 1s infinite alternate; /*ADCIONANDO O KEYFRAMES BOUNCE*/
+  -webkit-animation: quicar 1s infinite alternate; /*ESPICIFICANDO QUE A ANIMAÇÃO É INFINITA (LOOP)*/
+  border: 5px solid #DCA731;
+  border-radius: 30px;
+
+}
+@keyframes quicar {
+  from {
+    transform: translateY(5px); /*DIREÇÃIO QUE ELA VAI*/
+  }
+  to {
+    transform: translateY(-25px); /*DIREÇÃO QUE VOLTA*/
+  }
+}
+@-webkit-keyframes quicar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+
+.avisoPlaca h3{
+  color: #FFD700;
+  text-transform: uppercase;
+  text-align: center;
+  filter:drop-shadow(0px 0px 10px yellow);
+}
+
+.avisoPlaca p{
+  color:white;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin-left: 0;
+ 
+}.avisoPlaca p:hover{
+  transform: scale(1.02);
+  filter:drop-shadow(20px 20px 20px #ffffff); /*ANIMAÇÃO DE CORES AO REDOR DA VIDA*/
+
+}
+
+
+/* ESTILIZAÇÃO DA SESSÃO PRATOS DO CARDAPIO */
+
+.caixona{
+    margin: 10px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.caixona :hover{ /*DIV COM TODOS OS CARDS DENTRO*/
+    transform: scale(1.02); /*AUMENTA O TAMANHO DA DIV*/
+    opacity: 1.0; /*OPACIDADE DA DIV*/
+    transition: all 0.5s; /*TEMPO DE TRANSIÇÃO*/
+    filter:drop-shadow(0px 0px 10px #FFD700); /*ANIMAÇÃO DE CORES AO REDOR DA VIDA*/
+}
+
+.caixaCard{ /*DIV DE CADA CARD*/
+    border-radius: 5px;
+    border:2px rgb(243, 175, 28) solid;
+    margin: 20px;
+    height: 300px;
+    width: 255px;
+    opacity: 0.9;
+}
+.caixaCard :hover{ /*TIRANDO AS ANIMAÇOES DOS ITENS DE DENTRO DA DIV*/
+    transition: none;
+    filter: none;
+    transform: none;
+}
+
+img{
+    width: 250px;
+    border: 2px solid rgb(56, 36, 0);
+    border-radius: 5px;
+}
+.subtitulo{
+    opacity: 1.01;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+}
+p{
+    margin: 20px;
+}
+
+.sobremesas, .btpratos , .bebSAlcool ,.bebCAlcool{ /*TITULOS DE CADA SESSÃO*/
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 50px;
+  margin: 0px 100px 100px 100px;
+  text-transform: uppercase;
+}
+
+
+
+/*BOOTSTREP CAIO*/
+.conteudoCardapio{
+  display: none;
+}
+
+.ativa{
+  display: block;
+  animation: mudarConteudo 0.9s;
+}
+
+.selecionado{
+  transform: scale(1.1);
+  box-shadow:
+   2px -1px 5px 2px #fff,
+   7px 7px 20px 0px #DCA731,
+   4px 4px 5px 0px #FFD700;
+  transition:400ms ease all;
+  font-size: 15px;
+  font-weight: bolder;
+  color: #ffffff;
+
+}
+
+@keyframes mudarConteudo{
+  from{
+  opacity: 0.50;
+  transform: translateY(-80px);
+  }
+  to{
+  opacity: 1;
+  transform: scale(1);
+  }
+}
+
+/* Aplicando transições e animações com o scroll */
+.elemento {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
